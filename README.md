@@ -62,6 +62,7 @@ Use the `ad-slot` property to specify your google adsense ad slot value (specifi
 
 **Component options:**
 | prop | type | description
+| ---- | ---- | -----------
 | `ad-slot` | String | Googel Adsense adslot
 | `ad-format` | String | defaults to `auto`. Reger to adsense docs for otehr options
 | `ad-style` | Object | styles applied to the `<ins>` element. Default: `{ display: 'block' }`
