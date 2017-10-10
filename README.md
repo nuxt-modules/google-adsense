@@ -61,9 +61,10 @@ specific size (or sizes).
 Use the `ad-slot` property to specify your google adsense ad slot value (specified as a string)
 
 **Component options:**
+
 | prop | type | description
 | ---- | ---- | -----------
-| `ad-slot` | String | Googel Adsense adslot
+| `ad-slot` | String | Google Adsense adslot
 | `ad-format` | String | defaults to `auto`. Reger to adsense docs for otehr options
 | `ad-style` | Object | styles applied to the `<ins>` element. Default: `{ display: 'block' }`
 
@@ -71,19 +72,20 @@ Use the `ad-slot` property to specify your google adsense ad slot value (specifi
 Whenever your route chnges, any disaplayed ads will update, just as they would on normal
 page loads. 
 
-Note AdSense limited you to a maximum of three ads per page.
+Note AdSense limits you to a maximum of three ads per page.
 
 Refer to Adsense for full terms of use.
 
 ## Background
 This module uses a technique developed by the Angular team (with help from Google Adsense)
-to handle updating ads on dynamic (client routed) pages:
+to handle updating ads on progressive (client routed) web pplications:
 https://github.com/leonardteo/google-ads-test-angularjs
 
-Each time a new advertisement is requeted, the adsense parameter `data-ad-region` is updated to
-a random value. For this reason, you cnnot set the `data-ad-region` attribute.
+Each time a new advertisement is requested, the adsense parameter `data-ad-region` is updated to
+a random value. For this reason, you cnnot set the `data-ad-region` attribute on teh `<adsbygoogle>`
+component.
 
-For test mode, the following blog was used asa reference:
+For test mode, the following blog was used as a reference:
 https://www.thedev.blog/3087/test-adsense-ads-safely-without-violating-adsense-tos/
 
 ## This module is still a Work In Progress
