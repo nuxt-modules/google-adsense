@@ -10,15 +10,12 @@
   },
   "scripts": {
     "lint": "eslint lib src test",
-    "test": "npm run lint && jest",
-    "release": "standard-version && git push --follow-tags && npm publish",
-    "prepare": "npm run test"
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "eslintIgnore": [
     "*.template.*"
   ],
   "files": [
-    "lib",
     "src",
     "dist"
   ],
