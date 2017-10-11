@@ -1,6 +1,8 @@
 # Google AdSense 
 > Google AdSense integration for Nuxt.js. Advertisements will update whenever the page route changes
 
+**Please note that this module i still a work in progress**
+
 The asynychronous add code (`//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`) is automatically
 added to the `<head>` section of your pages.
 
