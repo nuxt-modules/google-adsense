@@ -3,7 +3,7 @@
 
 **Please note that this module i still a work in progress**
 
-The asynychronous add code (`//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`) is automatically
+The asynychronous ad code (`//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`) is automatically
 added to the `<head>` section of your pages.
 
 ## Setup
@@ -67,7 +67,7 @@ Use the `ad-slot` property to specify your google adsense ad slot value (specifi
 | prop | type | description
 | ---- | ---- | -----------
 | `ad-slot` | String | Google Adsense adslot
-| `ad-format` | String | defaults to `auto`. Reger to adsense docs for otehr options
+| `ad-format` | String | defaults to `auto`. Refer to the adsense docs for other options
 | `ad-style` | Object | styles applied to the `<ins>` element. Default: `{ display: 'block' }`
 
 ## Automatic updating of Ads
