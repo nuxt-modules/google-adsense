@@ -1,9 +1,7 @@
-# Google AdSense 
+# Google AdSense
 > Google AdSense integration for Nuxt.js. Advertisements will update whenever the page route changes
 
-**Please note that this module i still a work in progress**
-
-The asynychronous ad code (`//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`) is automatically
+The asynchronous ad code (`//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`) is automatically
 added to the `<head>` section of your pages.
 
 ## Setup
@@ -20,21 +18,23 @@ added to the `<head>` section of your pages.
  ]
 }
 ```
-using top level options
+
+Using top level options:
 
 ```js
 {
   modules: [
     ['@nuxtjs/google-adsense']
   ],
- 
+
  'google-adsense': {
     id: 'ca-pub-#########'
   }
 }
 ```
 
-## Configuration options:
+## Configuration options
+
 | property | type |  description
 | -------- | ---- | -----------
 | id | String | Your Google Adsense Publihser client ID. Required When not in test mode
@@ -72,7 +72,7 @@ Use the `ad-slot` property to specify your google adsense ad slot value (specifi
 
 ## Automatic updating of Ads
 Whenever your route chnges, any disaplayed ads will update, just as they would on normal
-page loads. 
+page loads.
 
 Note AdSense limits you to a maximum of three ads per page.
 
@@ -90,10 +90,8 @@ component.
 For test mode, the following blog was used as a reference:
 https://www.thedev.blog/3087/test-adsense-ads-safely-without-violating-adsense-tos/
 
-## This module is still a Work In Progress
-
 ## License
 
 [MIT License](./LICENSE)
 
-Copyright (c) -
+Copyright (c) 2017 Troy Morehouse - Nuxt Community
