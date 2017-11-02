@@ -36,12 +36,14 @@ added to the `<head>` section of your pages.
 
 ## Configuration options
 
-| property | type |  description
+| Option | type |  description
 | -------- | ---- | -----------
-| id | String | Your Google Adsense Publihser client ID. Required When not in test mode.
-| tag | String | AdSense component tag name. Defaults to `adsbygoogle`.
-| includeQuery | Boolean | By default, only `$route.path` is checked for changes. If set to `true` `$route.query` will also be taken into account. The default is `false`.
-| test | Boolean | Force AdSense into _test_ mode.
+| `id` | String | Your Google Adsense Publihser client ID (i.e. `ca-pub-#########`). **Required** when not in test mode.
+| `tag` | String | AdSense component tag name. Defaults to `adsbygoogle`.
+| `includeQuery` | Boolean | When `false`, only `$route.path` is checked for changes. If set to `true` `$route.query` will also be taken into account. The default is `false`.
+| `analyticsUacct` | String | Google Analytics Account ID (if linking analytics with AdSense, i.e. `UA-#######-#`).
+| `analyticsDomainName` | String | Google Analytics Account Domain (if linking analytics with AdSense, i.e. `example.com`).
+| `test` | Boolean | Force AdSense into _test_ mode (see below).
 
 ### Test mode
 
@@ -73,7 +75,10 @@ Use the `ad-slot` property to specify your google adsense ad slot value (specifi
 | `ad-slot` | String | Google Adsense adslot. **This prop is required when not in test mode**. Refer to your AdSense account for ad-slot values.
 | `ad-format` | String | Defaults to `'auto'`. Refer to the adsense docs for other options
 | `ad-style` | Object | Styles to apply to the rendered `<ins>` element. Default: `{ display: 'block' }`. Refer to VueJS [style binding docs](https://vuejs.org/v2/guide/class-and-style.html#Object-Syntax-1) for the Object format.
-| `include-query` | Boolean | Override global option `includeQuery` on a per ad basis
+| `page-url` | String | Optional.  Set a reference page URL (of similar content) if the ad is on a page that requires authentication. When set, this prop must be a fully qualified URL (inclcuding protocol and hostname).
+| `include-query` | Boolean | Override global option `includeQuery` on a per ad basis. Ensure all ads on a page have the same setting.
+| `analytics-uacct` | String | Google Analytics Account ID (if linking analytics with AdSense, i.e. `UA-#######-#`). Defaults to the value specified in the plugin option `analyticsUacct`.
+| `analytics-domain-name` | String | Google Analytics Account domain (if linking analytics with AdSense, i.e. `example.com`). Defaults to the value specified in the plugin option `analyticsDomainName`.
 
 
 ## Automatic updating of Ads
@@ -83,10 +88,11 @@ page loads.
 
 ## Caveats:
 - **Note:** AdSense limits you to a maximum of three (3) ads per page.
-- **Caution:** Reloading of ads aritrarily (with minimal page content changes) may result in
-the suspension of your AdSense account. Refer to AdSense for full terms of use.
+- **Caution:** Reloading of ads arbitrarily (with minimal page content changes) may result in
+the suspension of your AdSense account. _Refer to AdSense for full terms of use._
 - Google needs to crawl each page where ads appear. Ensure your site SSR renders any page where
 ads apepar. Ads on un-crawlable pages will not be shown.
+- When placing ads on pages that require authentication, set `page-url` on the `<adsbygoogle />` component to the URL of a page on your site that is publicly accessible, which would have similar/relevant content.
 
 
 ## Background
