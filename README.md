@@ -39,7 +39,7 @@ added to the `<head>` section of your pages.
 | Option | type |  description
 | -------- | ---- | -----------
 | `id` | String | Your Google Adsense Publihser client ID (i.e. `ca-pub-#########`). **Required** when not in test mode.
-| `pageLevelAds` | Boolean | Enable Adsense Page Level Ads. Default is `true`.
+| `pageLevelAds` | Boolean | Enable Adsense Page Level Ads. Default is `false`. Refer to the AdSense docs for details.
 | `tag` | String | AdSense component tag name. Defaults to `adsbygoogle`.
 | `includeQuery` | Boolean | When `false`, only `$route.path` is checked for changes. If set to `true` `$route.query` will also be taken into account. The default is `false`.
 | `analyticsUacct` | String | Google Analytics Account ID (if linking analytics with AdSense, i.e. `UA-#######-#`).
