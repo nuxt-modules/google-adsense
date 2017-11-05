@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * **options:** New config option for page level ads
-* New initialization script added in <head>
+* New initialization script added in `<head>`
 
 <a name="1.1.0"></a>
 ## [1.1.1](https://github.com/nuxt-community/adsense-module/compare/v1.1.0...v1.1.1) (2017-11-02)
