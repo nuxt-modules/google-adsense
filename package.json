@@ -35,5 +35,20 @@
     "jest": "^21.2.1",
     "jsdom": "^11.2.0",
     "standard-version": "^4.2.0"
-  }
+  },
+  "keywords": [
+    "AdSense",
+    "Google",
+    "Nuxt",
+    "NuxtJS",
+    "Nuxt.js",
+    "PWA",
+    "SSR",
+    "Vue",
+    "VueJS",
+    "Vue2",
+    "VueRouter",
+    "vue-router",
+    "Web"
+  ]
 }
