@@ -76,6 +76,8 @@ Use the `ad-slot` property to specify your google adsense ad slot value (specifi
 | `ad-slot` | String | Google Adsense adslot. **This prop is required when not in test mode**. Refer to your AdSense account for ad-slot values.
 | `ad-format` | String | Defaults to `'auto'`. Refer to the adsense docs for other options
 | `ad-style` | Object | Styles to apply to the rendered `<ins>` element. Default: `{ display: 'block' }`. Refer to VueJS [style binding docs](https://vuejs.org/v2/guide/class-and-style.html#Object-Syntax-1) for the Object format.
+| `ad-layout` | String | Optional. Refer to the adsense docs
+| `ad-layout-key` | String | Optional. Refer to the adsense docs
 | `page-url` | String | Optional.  Set a reference page URL (of similar content) if the ad is on a page that requires authentication. When set, this prop must be a fully qualified URL (inclcuding protocol and hostname).
 | `include-query` | Boolean | Override global option `includeQuery` on a per ad basis. Ensure all ads on a page have the same setting.
 | `analytics-uacct` | String | Google Analytics Account ID (if linking analytics with AdSense, i.e. `UA-#######-#`). Defaults to the value specified in the plugin option `analyticsUacct`.
