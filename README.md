@@ -90,7 +90,6 @@ page loads.
 
 
 ## Caveats:
-- **Note:** AdSense limits you to a maximum of three (3) ads per page.
 - **Caution:** Reloading of ads arbitrarily (with minimal page content changes) may result in
 the suspension of your AdSense account. _Refer to AdSense for full terms of use._
 - Google needs to crawl each page where ads appear. Ensure your site SSR renders any page where
