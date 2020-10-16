@@ -34,7 +34,7 @@
     "eslint-plugin-vue": "^2.1.0",
     "jest": "^21.2.1",
     "jsdom": "^11.2.0",
-    "standard-version": "^4.2.0"
+    "standard-version": "^8.0.1"
   },
   "keywords": [
     "AdSense",
