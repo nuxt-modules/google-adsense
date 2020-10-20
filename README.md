@@ -38,7 +38,7 @@ added to the `<head>` section of your pages.
 
 | Option | type |  description
 | -------- | ---- | -----------
-| `id` | String | Your Google Adsense Publihser client ID (i.e. `ca-pub-#########`). **Required** when not in test mode.
+| `id` | String | Your Google Adsense Publisher client ID (i.e. `ca-pub-#########`). **Required** when not in test mode.
 | `pageLevelAds` | Boolean | Enable Adsense Page Level Ads. Default is `false`. Refer to the AdSense docs for details.
 | `tag` | String | AdSense component tag name. Defaults to `adsbygoogle`.
 | `includeQuery` | Boolean | When `false`, only `$route.path` is checked for changes. If set to `true` `$route.query` will also be taken into account. The default is `false`.
@@ -55,7 +55,7 @@ But you can keep test mode on in production by setting the configuration option 
 
 Test mode uses a test publisher ID, so that you will not be violating AdSense TOS.
 
-Note that test advertiements will typically appear as an empty space, but will have the
+Note that test advertisements will typically appear as an empty space, but will have the
 correct dimensions (i.e. will occupy the correct space needed by the rendered ad).
 
 ## Usage
