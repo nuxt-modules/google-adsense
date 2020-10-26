@@ -1,6 +1,19 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.2.0](https://github.com/nuxt-community/adsense-module/compare/v1.1.3...v1.2.0) (2020-10-26)
+
+
+### Features
+
+* Add support for full width responsive prop ([#38](https://github.com/nuxt-community/adsense-module/issues/38)) ([de1a059](https://github.com/nuxt-community/adsense-module/commit/de1a059c72f02814a50e00dbc353bc19a5b0a37c))
+* support anchor ads config ([#27](https://github.com/nuxt-community/adsense-module/issues/27)) ([008adba](https://github.com/nuxt-community/adsense-module/commit/008adba057804024ffddbb124aa8d05a68226ef0))
+
+
+### Bug Fixes
+
+* prevent `adsbygoogle` is not defined error ([#68](https://github.com/nuxt-community/adsense-module/issues/68)) ([d853d9a](https://github.com/nuxt-community/adsense-module/commit/d853d9a36a02447199ad1d27c79f5d1d2a026562))
 
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/nuxt-community/adsense-module/compare/v1.1.2...v1.1.3) (2018-01-16)
