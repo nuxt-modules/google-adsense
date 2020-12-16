@@ -9,7 +9,8 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "eslint lib src test",
+    "lint": "eslint lib",
+    "test":  "yarn lint",
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "eslintIgnore": [
