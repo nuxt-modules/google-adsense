@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-rc.1](https://github.com/nuxt-community/adsense-module/compare/v1.2.1...v1.3.0-rc.1) (2020-12-17)
+
+
+### Bug Fixes
+
+* ensure script calls once ([#98](https://github.com/nuxt-community/adsense-module/issues/98)) ([aa811ed](https://github.com/nuxt-community/adsense-module/commit/aa811ed7800bddad120c0917b298e0a06411f835))
+
 ### [1.2.1](https://github.com/nuxt-community/adsense-module/compare/v1.2.0...v1.2.1) (2020-12-16)
 
 
