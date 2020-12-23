@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/google-adsense",
-  "version": "1.3.0-rc.1",
+  "version": "1.3.0",
   "description": "Google Adsense Module for Nuxt.js",
   "license": "MIT",
   "repository": "https://github.com/nuxt-community/adsense-module",
