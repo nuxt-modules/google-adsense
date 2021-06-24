@@ -46,7 +46,7 @@ added to the `<head>` section of your pages.
 | `analyticsDomainName` | String | Google Analytics Account Domain (if linking analytics with AdSense, i.e. `example.com`).
 | `overlayBottom` | Boolean | Enable Adsense Anchor Ads to show at bottom. Default is `false`. Refer to the AdSense docs for details.
 | `onPageLoad` | Boolean | Loads Adsense script after page loade. Default is `false`.
-| `pauseOnLoad` | Boolean | Pauses Adsense on load to comply with GDPR law. Default is `false`.
+| `pauseOnLoad` | Boolean | Pauses Adsense on load to comply with GDPR law. Refer to the AdSense docs for details. Default is `false`.
 | `test` | Boolean | Force AdSense into _test_ mode (see below).
 
 ### Test mode
