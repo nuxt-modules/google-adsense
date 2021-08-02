@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/nuxt-community/adsense-module/compare/v1.3.0...v1.4.0) (2021-08-02)
+
+
+### Features
+
+* ads personalization settings `pauseOnLoad` ([#127](https://github.com/nuxt-community/adsense-module/issues/127)) ([ad93745](https://github.com/nuxt-community/adsense-module/commit/ad93745701dd81cdc869ed0371976ecc3fd8043b))
+* Allow config options via `publicRuntimeConfig` ([#120](https://github.com/nuxt-community/adsense-module/issues/120)) ([752b176](https://github.com/nuxt-community/adsense-module/commit/752b176bb2fed4c66961866c5e2903bd600496db))
+* Improving ad performance with the new AdSense code ([#128](https://github.com/nuxt-community/adsense-module/issues/128)) ([fa8e5c5](https://github.com/nuxt-community/adsense-module/commit/fa8e5c504bf2857680a1f34d6555f55ce250c423))
+
+
+### Bug Fixes
+
+* add data-ad-client attribute ([#116](https://github.com/nuxt-community/adsense-module/issues/116)) ([4d83100](https://github.com/nuxt-community/adsense-module/commit/4d831003697fc52f5719cec6b24c7a3ec571572d))
+* do not update unconnected components ([#107](https://github.com/nuxt-community/adsense-module/issues/107)) ([345703b](https://github.com/nuxt-community/adsense-module/commit/345703bfa11f96ec3eb9aaec842753a068001b02))
+* use defer in script load ([#122](https://github.com/nuxt-community/adsense-module/issues/122)) ([5e6ff50](https://github.com/nuxt-community/adsense-module/commit/5e6ff507ad2f3fabd746bbe7e7e9dcb2cab6af94))
+
 ## [1.3.0](https://github.com/nuxt-community/adsense-module/compare/v1.3.0-rc.1...v1.3.0) (2020-12-23)
 
 ## [1.3.0-rc.1](https://github.com/nuxt-community/adsense-module/compare/v1.2.1...v1.3.0-rc.1) (2020-12-17)
