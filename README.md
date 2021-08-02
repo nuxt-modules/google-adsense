@@ -28,6 +28,28 @@ Using top level options:
     id: 'ca-pub-#########'
   }
 }
+
+```
+Using runtime config:
+
+```js
+{
+  modules: [
+    ['@nuxtjs/google-adsense']
+  ],
+
+  'google-adsense': {
+    onPageLoad: false,
+    pageLevelAds: false,
+  },
+
+  publicRuntimeConfig: {
+    'google-adsense': {
+      id: process.env.GOOGLE_ADSENSE_ID,
+      test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
+    },
+  },
+}
 ```
 
 The asynchronous ad code (`//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`) is automatically
