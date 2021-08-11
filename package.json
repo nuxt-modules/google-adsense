@@ -26,15 +26,15 @@
     "codecov": "^3.8.3",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^4.1.0",
-    "eslint-plugin-vue": "^7.15.0",
+    "eslint-plugin-vue": "^7.16.0",
     "jest": "^27.0.6",
     "jsdom": "^16.7.0",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.15.8",
     "standard-version": "^9.3.1"
   },
   "keywords": [
