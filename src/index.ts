@@ -22,6 +22,9 @@ const AdSenseURL = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
 
 export default function nuxtAdSense (moduleOptions = {}) {
   const nuxt = this.nuxt
+  const isNuxt2 = (nuxt?._version || nuxt?.version || nuxt?.constructor?.version || "").replace(/^v/g, "").startsWith("2."); 
+  const useNuxtMeta = (fn) => fn(isNuxt2 ? nuxt.options.head : nuxt.options.meta)
+
   const options = Object.assign({}, Defaults, nuxt.options['google-adsense'] || moduleOptions)
 
   // Normalize options
@@ -55,77 +58,92 @@ export default function nuxtAdSense (moduleOptions = {}) {
   options.tag = options.tag || Defaults.tag
 
 
-  // Add the async Google AdSense script to head
-  nuxt.options.head.script.push({
-    hid: 'adsbygoogle-script',
-    defer: true,
-    crossorigin: 'anonymous',
-    src: `${AdSenseURL}?client=${options.id}`
-  })
-
-  // Unfortunately these lines are needed to prevent vue-meta from esacping quotes in the init script
-  nuxt.options.head.__dangerouslyDisableSanitizersByTagID = nuxt.options.head.__dangerouslyDisableSanitizersByTagID || {}
-  nuxt.options.head.__dangerouslyDisableSanitizersByTagID.adsbygoogle = ['innerHTML']
-
-  const adsenseScript = `{
-    google_ad_client: "${options.id}",
-    overlays: {bottom: ${options.overlayBottom}},
-    ${options.pageLevelAds ? 'enable_page_level_ads: true' : ''}
-  }`
-  // Initialize Adsense with ad client id
-  if (!options.onPageLoad) {
-    nuxt.options.head.script.push(
-      createScriptMeta(
-        `adsbygoogle.pauseAdRequests=${options.pauseOnLoad ? '1' : '0'};
-        adsbygoogle.push(${adsenseScript});`
-      )
-    )
-  } else {
-    nuxt.options.head.script.push(
-      createScriptMeta(
-        `adsbygoogle.onload = function () {
-          adsbygoogle.pauseAdRequests=${options.pauseOnLoad ? '1' : '0'};
-          [].forEach.call(document.getElementsByClassName('adsbygoogle'), function () { adsbygoogle.push(${adsenseScript}); })
-        };`
-      )
-    )
-  }
-
-  // If in DEV mode, add robots meta first to comply with Adsense policies
-  // To prevent MediaPartenrs from scraping the site
-  if (options.test) {
-    nuxt.options.head.meta.unshift({
-      name: 'robots',
-      content: 'noindex,noarchive,nofollow'
+  useNuxtMeta(head => {
+    // Add the async Google AdSense script to head
+    head.script.push({
+      hid: 'adsbygoogle-script',
+      defer: true,
+      crossorigin: 'anonymous',
+      src: `${AdSenseURL}?client=${options.id}`
     })
-  }
+    // Unfortunately these lines are needed to prevent vue-meta from esacping quotes in the init script
+    head.__dangerouslyDisableSanitizersByTagID = head.__dangerouslyDisableSanitizersByTagID || {}
+    head.__dangerouslyDisableSanitizersByTagID.adsbygoogle = ['innerHTML']
+
+    const adsenseScript = `{
+      google_ad_client: "${options.id}",
+      overlays: {bottom: ${options.overlayBottom}},
+      ${options.pageLevelAds ? 'enable_page_level_ads: true' : ''}
+    }`
+    // Initialize Adsense with ad client id
+    if (!options.onPageLoad) {
+      head.script.push(
+        createScriptMeta(
+          `adsbygoogle.pauseAdRequests=${options.pauseOnLoad ? '1' : '0'};
+          adsbygoogle.push(${adsenseScript});`
+        )
+      )
+    } else {
+      head.script.push(
+        createScriptMeta(
+          `adsbygoogle.onload = function () {
+            adsbygoogle.pauseAdRequests=${options.pauseOnLoad ? '1' : '0'};
+            [].forEach.call(document.getElementsByClassName('adsbygoogle'), function () { adsbygoogle.push(${adsenseScript}); })
+          };`
+        )
+      )
+    }
   
-  // Register our plugin and pass config options
-  this.addPlugin({
-    'data-ad-client': `ca-pub-${options.id}`,
-    src: resolveTemplateDir('./plugin.mjs'),
-    fileName: 'adsbygoogle.mjs',
-    options: {
-      component: resolveRuntimeDir('./components/Adsbygoogle.vue'),
-      alias: options.tag,
+    // If in DEV mode, add robots meta first to comply with Adsense policies
+    // To prevent MediaPartenrs from scraping the site
+    if (options.test) {
+      head.meta.unshift({
+        name: 'robots',
+        content: 'noindex,noarchive,nofollow'
+      })
     }
   })
+  
+  if (isNuxt2) {
+    // Register our plugin and pass config options
+    this.addPlugin({
+      src: resolveTemplateDir('./plugin.mjs'),
+      fileName: 'adsbygoogle.js',
+      options: {
+        component: resolveRuntimeDir('./components/Adsbygoogle.vue'),
+        alias: options.tag,
+      }
+    })
+  } else {
+    // Add component to auto load
+    nuxt.hook('components:dirs', async (dirs: any) => {
+      dirs.push({
+        path: resolveRuntimeDir('components-v3'),
+        isAsync: false,
+        prefix: '',
+        level: 999
+      })
+    })
+  }
   
   // Inject options into runtime config
   nuxt.options.publicRuntimeConfig['google-adsense'] = {
     ...options,
     ...(nuxt.options.publicRuntimeConfig['google-adsense'] || {}),
   }
-}
 
-function createScriptMeta (script: string) {
-  // Ensure `window.adsbygoogle` is defined
-  script = `(window.adsbygoogle = window.adsbygoogle || []); ${script}`
-  // wrapp script inside a guard check to ensure it executes only once
-  script = `if (!window.__abg_called){ ${script} window.__abg_called = true;}`
-
-  return {
-    hid: 'adsbygoogle',
-    innerHTML: script
+  function createScriptMeta (script: string) {
+    // Ensure `window.adsbygoogle` is defined
+    script = `(window.adsbygoogle = window.adsbygoogle || []); ${script}`
+    // wrapp script inside a guard check to ensure it executes only once
+    script = `if (!window.__abg_called){ ${script} window.__abg_called = true;}`
+  
+    return isNuxt2 ? {
+      hid: 'adsbygoogle',
+      innerHTML: script
+    } : {
+      hid: 'adsbygoogle',
+      children: script
+    }
   }
 }

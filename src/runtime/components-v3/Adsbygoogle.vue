@@ -1,28 +1,25 @@
 <script>
+import { h } from 'vue'
 export default {
-  render (h) {
+  render () {
     return h(
       'ins',
       {
         'class': ['adsbygoogle'],
         style: this.adStyle,
-        attrs: {
-          'data-ad-client': this.adClient || this.options.id,
-          'data-ad-slot': this.adSlot || null,
-          'data-ad-format': this.adFormat,
-          'data-ad-region': this.show ? this.adRegion() : null,
-          'data-ad-layout': this.adLayout || null,
-          'data-ad-layout-key': this.adLayoutKey || null,
-          'data-page-url': this.pageUrl ? this.pageUrl : null,
-          'data-analytics-uacct': this.analyticsUacct || this.options.analyticsUacct || null,
-          'data-analytics-domain-name': this.analyticsDomainName || this.options.analyticsDomainName || null,
-          'data-adtest': this.options.test ? 'on' : null,
-          'data-adsbygoogle-status': this.show ? null : '',
-          'data-full-width-responsive': this.adFullWidthResponsive || null,
-        },
-        domProps: {
-          innerHTML: this.show ? '' : ' '
-        },
+        'data-ad-client': this.adClient || this.options.id,
+        'data-ad-slot': this.adSlot || null,
+        'data-ad-format': this.adFormat,
+        'data-ad-region': this.show ? this.adRegion() : null,
+        'data-ad-layout': this.adLayout || null,
+        'data-ad-layout-key': this.adLayoutKey || null,
+        'data-page-url': this.pageUrl ? this.pageUrl : null,
+        'data-analytics-uacct': this.analyticsUacct || this.options.analyticsUacct || null,
+        'data-analytics-domain-name': this.analyticsDomainName || this.options.analyticsDomainName || null,
+        'data-adtest': this.options.test ? 'on' : null,
+        'data-adsbygoogle-status': this.show ? null : '',
+        'data-full-width-responsive': this.adFullWidthResponsive || null,
+        innerHTML: this.show ? '' : ' ',
         key: Math.random()
       }
     )
@@ -75,7 +72,9 @@ export default {
   },
   data () {
     return {
-      show: true
+      show: true,
+      renderQueue: [],
+      key: Math.random()
     }
   },
   mounted () {
@@ -83,7 +82,7 @@ export default {
   },
   computed: {
     options() {
-      const options = { ...this.$config['google-adsense'] || {} }
+      const options = { ...useRuntimeConfig()['google-adsense'] || {} }
       if (options.test) {
         options.id = 'ca-google'
       }
@@ -129,20 +128,23 @@ export default {
       }
       // Reset the INS element
       this.show = false
+
       // Show new ad on nextTick
       this.$nextTick(this.showAd)
     },
     showAd () {
       this.show = true
-
-      this.$nextTick(() => {
+      setTimeout(() => {
+        if (this.$el.innerHTML) {
+          return
+        }
         try {
           // Once ad container (<ins>) DOM has (re-)rendered, request a new advert
           (window.adsbygoogle = window.adsbygoogle || []).push({})
         } catch (error) {
           console.error(error)
         }
-      })
+      }, 50)
     }
   }
 }
