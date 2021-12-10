@@ -4,11 +4,19 @@
   "description": "Google Adsense Module for Nuxt.js",
   "license": "MIT",
   "repository": "https://github.com/nuxt-community/adsense-module",
-  "main": "lib/module.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
+    "build": "unbuild",
     "lint": "eslint lib",
     "test": "yarn lint",
     "release": "standard-version && git push --follow-tags && npm publish"
@@ -17,11 +25,11 @@
     "*.template.*"
   ],
   "files": [
-    "lib",
-    "src",
     "dist"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "pathe": "^0.2.0"
+  },
   "devDependencies": {
     "codecov": "^3.8.3",
     "eslint": "^8.4.1",
@@ -35,7 +43,8 @@
     "jest": "^27.4.4",
     "jsdom": "^19.0.0",
     "nuxt": "^2.15.8",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.3.2",
+    "unbuild": "^0.6.3"
   },
   "keywords": [
     "AdSense",

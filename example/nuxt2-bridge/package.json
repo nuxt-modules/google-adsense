@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "nuxi dev"
+  },
   "dependencies": {
-    "nuxt": "latest",
+    "nuxt-edge": "latest",
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@latest",
     "@nuxtjs/google-adsense": "latest"
   }
 }
