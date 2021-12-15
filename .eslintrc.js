@@ -9,11 +9,11 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: 'standard',
-  plugins: [
-    'jest',
-    'vue'
+  extends: [
+    '@nuxtjs/eslint-config-typescript',
+    'plugin:vue/vue3-recommended'
   ],
+  plugins: [],
   rules: {
     // Allow paren-less arrow functions
     'arrow-parens': 0,
@@ -22,7 +22,8 @@ module.exports = {
     // Allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // Do not allow console.logs etc...
-    'no-console': 2
+    'no-console': 2,
+    'vue/multi-word-component-names': 0
   },
   globals: {
     'jest/globals': true,

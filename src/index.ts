@@ -22,7 +22,7 @@ const AdSenseURL = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
 
 export default function nuxtAdSense (moduleOptions = {}) {
   const nuxt = this.nuxt
-  const isNuxt2 = (nuxt?._version || nuxt?.version || nuxt?.constructor?.version || "").replace(/^v/g, "").startsWith("2."); 
+  const isNuxt2 = (nuxt?._version || nuxt?.version || nuxt?.constructor?.version || '').replace(/^v/g, '').startsWith('2.')
   const useNuxtMeta = (fn) => fn(isNuxt2 ? nuxt.options.head : nuxt.options.meta)
 
   const options = Object.assign({}, Defaults, nuxt.options['google-adsense'] || moduleOptions)
@@ -56,7 +56,6 @@ export default function nuxtAdSense (moduleOptions = {}) {
 
   // Set the desired component tag name
   options.tag = options.tag || Defaults.tag
-
 
   useNuxtMeta(head => {
     // Add the async Google AdSense script to head
@@ -93,7 +92,7 @@ export default function nuxtAdSense (moduleOptions = {}) {
         )
       )
     }
-  
+
     // If in DEV mode, add robots meta first to comply with Adsense policies
     // To prevent MediaPartenrs from scraping the site
     if (options.test) {
@@ -103,7 +102,7 @@ export default function nuxtAdSense (moduleOptions = {}) {
       })
     }
   })
-  
+
   if (isNuxt2) {
     // Register our plugin and pass config options
     this.addPlugin({
@@ -111,12 +110,12 @@ export default function nuxtAdSense (moduleOptions = {}) {
       fileName: 'adsbygoogle.js',
       options: {
         component: resolveRuntimeDir('./components/Adsbygoogle.vue'),
-        alias: options.tag,
+        alias: options.tag
       }
     })
   } else {
     // Add component to auto load
-    nuxt.hook('components:dirs', async (dirs: any) => {
+    nuxt.hook('components:dirs', (dirs: any) => {
       dirs.push({
         path: resolveRuntimeDir('components-v3'),
         isAsync: false,
@@ -125,11 +124,11 @@ export default function nuxtAdSense (moduleOptions = {}) {
       })
     })
   }
-  
+
   // Inject options into runtime config
   nuxt.options.publicRuntimeConfig['google-adsense'] = {
     ...options,
-    ...(nuxt.options.publicRuntimeConfig['google-adsense'] || {}),
+    ...(nuxt.options.publicRuntimeConfig['google-adsense'] || {})
   }
 
   function createScriptMeta (script: string) {
@@ -137,13 +136,15 @@ export default function nuxtAdSense (moduleOptions = {}) {
     script = `(window.adsbygoogle = window.adsbygoogle || []); ${script}`
     // wrapp script inside a guard check to ensure it executes only once
     script = `if (!window.__abg_called){ ${script} window.__abg_called = true;}`
-  
-    return isNuxt2 ? {
-      hid: 'adsbygoogle',
-      innerHTML: script
-    } : {
-      hid: 'adsbygoogle',
-      children: script
-    }
+
+    return isNuxt2
+      ? {
+          hid: 'adsbygoogle',
+          innerHTML: script
+        }
+      : {
+          hid: 'adsbygoogle',
+          children: script
+        }
   }
 }

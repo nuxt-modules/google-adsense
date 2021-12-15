@@ -1,46 +1,28 @@
 <script>
+// eslint-disable-next-line import/named
 import { h } from 'vue'
+
 export default {
-  render () {
-    return h(
-      'ins',
-      {
-        'class': ['adsbygoogle'],
-        style: this.adStyle,
-        'data-ad-client': this.adClient || this.options.id,
-        'data-ad-slot': this.adSlot || null,
-        'data-ad-format': this.adFormat,
-        'data-ad-region': this.show ? this.adRegion() : null,
-        'data-ad-layout': this.adLayout || null,
-        'data-ad-layout-key': this.adLayoutKey || null,
-        'data-page-url': this.pageUrl ? this.pageUrl : null,
-        'data-analytics-uacct': this.analyticsUacct || this.options.analyticsUacct || null,
-        'data-analytics-domain-name': this.analyticsDomainName || this.options.analyticsDomainName || null,
-        'data-adtest': this.options.test ? 'on' : null,
-        'data-adsbygoogle-status': this.show ? null : '',
-        'data-full-width-responsive': this.adFullWidthResponsive || null,
-        innerHTML: this.show ? '' : ' ',
-        key: Math.random()
-      }
-    )
-  },
   props: {
     adClient: {
       type: String,
       default: undefined
     },
     adSlot: {
-      type: String
+      type: String,
+      default: null
     },
     adFormat: {
       type: String,
       default: 'auto'
     },
     adLayout: {
-      type: String
+      type: String,
+      default: null
     },
     adLayoutKey: {
-      type: String
+      type: String,
+      default: null
     },
     adStyle: {
       type: Object,
@@ -55,7 +37,8 @@ export default {
       default: false
     },
     pageUrl: {
-      type: String
+      type: String,
+      default: null
     },
     analyticsUacct: {
       type: String,
@@ -77,18 +60,15 @@ export default {
       key: Math.random()
     }
   },
-  mounted () {
-    this.showAd()
-  },
   computed: {
-    options() {
+    options () {
       const options = { ...useRuntimeConfig()['google-adsense'] || {} }
       if (options.test) {
         options.id = 'ca-google'
       }
       return options
     },
-    _includeQuery() {
+    _includeQuery () {
       return this.includeQuery || (typeof this.includeQuery === 'undefined' && this.options.includeQuery)
     }
   },
@@ -97,10 +77,10 @@ export default {
       // Update if element is connected to DOM.
       // Prevent updating not connected alive componentns.
       if (this.$el && !this.$el.isConnected) {
-        return;
+        return
       }
       if (to.fullPath === from.fullPath) {
-        return;
+        return
       }
       const keys = Object.keys
       const toQuery = to.query
@@ -117,6 +97,9 @@ export default {
         this.updateAd()
       }
     }
+  },
+  mounted () {
+    this.showAd()
   },
   methods: {
     adRegion () {
@@ -142,10 +125,34 @@ export default {
           // Once ad container (<ins>) DOM has (re-)rendered, request a new advert
           (window.adsbygoogle = window.adsbygoogle || []).push({})
         } catch (error) {
+          // eslint-disable-next-line no-console
           console.error(error)
         }
       }, 50)
     }
+  },
+  render () {
+    return h(
+      'ins',
+      {
+        class: ['adsbygoogle'],
+        style: this.adStyle,
+        'data-ad-client': this.adClient || this.options.id,
+        'data-ad-slot': this.adSlot || null,
+        'data-ad-format': this.adFormat,
+        'data-ad-region': this.show ? this.adRegion() : null,
+        'data-ad-layout': this.adLayout || null,
+        'data-ad-layout-key': this.adLayoutKey || null,
+        'data-page-url': this.pageUrl ? this.pageUrl : null,
+        'data-analytics-uacct': this.analyticsUacct || this.options.analyticsUacct || null,
+        'data-analytics-domain-name': this.analyticsDomainName || this.options.analyticsDomainName || null,
+        'data-adtest': this.options.test ? 'on' : null,
+        'data-adsbygoogle-status': this.show ? null : '',
+        'data-full-width-responsive': this.adFullWidthResponsive || null,
+        innerHTML: this.show ? '' : ' ',
+        key: Math.random()
+      }
+    )
   }
 }
 </script>

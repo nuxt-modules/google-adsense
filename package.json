@@ -12,18 +12,12 @@
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "unbuild",
-    "lint": "eslint lib",
+    "lint": "eslint --ext .vue,.ts,.js .",
     "test": "yarn lint",
     "release": "standard-version && git push --follow-tags && npm publish"
   },
-  "eslintIgnore": [
-    "*.template.*"
-  ],
   "files": [
     "dist"
   ],
@@ -31,14 +25,9 @@
     "pathe": "^0.2.0"
   },
   "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "codecov": "^3.8.3",
     "eslint": "^8.4.1",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.3.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0",
-    "eslint-plugin-standard": "^4.1.0",
     "eslint-plugin-vue": "^8.2.0",
     "jest": "^27.4.5",
     "jsdom": "^19.0.0",
