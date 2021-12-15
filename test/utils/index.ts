@@ -12,7 +12,7 @@ import {
 import type { NuxtTestOptions } from '@nuxt/test-utils'
 import getPort from 'get-port'
 
-async function listen() {
+async function listen () {
   const ctx = getContext()
   const { server } = ctx.options.config
   const port = await getPort({
@@ -22,7 +22,7 @@ async function listen() {
   await (ctx.nuxt as any).server.listen(port)
 }
 
-export function setupTest(options: Partial<NuxtTestOptions>) {
+export function setupTest (options: Partial<NuxtTestOptions>) {
   // @ts-ignore - Set LOCAL_IMPORT env variable for testing with debug-theme
   process.env.LOCAL_IMPORT = true
 

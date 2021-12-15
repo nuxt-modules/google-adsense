@@ -11,7 +11,9 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "types": [
-      "node"
+      "node",
+      "@types/chai",
+      "@types/mocha"
     ],
     "baseUrl": ".",
   }
