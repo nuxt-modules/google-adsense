@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/nuxt-community/adsense-module/compare/v1.4.0...v2.0.0) (2021-12-19)
+
+
+### Features
+
+* support Nuxt bridge & Nuxt 3 ([#150](https://github.com/nuxt-community/adsense-module/issues/150)) ([155a7bd](https://github.com/nuxt-community/adsense-module/commit/155a7bdf53de4ac3cdc5882842aa7e27dda4862d))
+
+
+### Bug Fixes
+
+* lint ([47996b5](https://github.com/nuxt-community/adsense-module/commit/47996b5ab5ee22a3796308270b6a48602e5c83e3))
+* module exports ([66090b7](https://github.com/nuxt-community/adsense-module/commit/66090b7d01e82ae45ddfed20d827c0b34d9ea3a6))
+* page level ads error ([#135](https://github.com/nuxt-community/adsense-module/issues/135)) ([e789f62](https://github.com/nuxt-community/adsense-module/commit/e789f62a090fcef2b7ae142ec80e01eab8978da1))
+* **module:** add window as property owner ([#138](https://github.com/nuxt-community/adsense-module/issues/138)) ([cd86b0c](https://github.com/nuxt-community/adsense-module/commit/cd86b0c61b05e9d5374485c7b40d916b8eda4a79))
+
 ## [1.4.0](https://github.com/nuxt-community/adsense-module/compare/v1.3.0...v1.4.0) (2021-08-02)
 
 
