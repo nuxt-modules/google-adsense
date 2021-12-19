@@ -5,12 +5,9 @@
   "license": "MIT",
   "repository": "https://github.com/nuxt-community/adsense-module",
   "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
+    ".": "./dist/index.mjs"
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "scripts": {
     "build": "unbuild",
