@@ -9,7 +9,6 @@
   "dependencies": {
     "@nuxt/types": "latest",
     "@nuxt/typescript-build": "latest",
-    "@nuxtjs/google-adsense": "latest",
     "nuxt": "latest"
   }
 }
