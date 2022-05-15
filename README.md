@@ -133,9 +133,6 @@ Each time a new advertisement is requested, the adsense parameter `data-ad-regio
 updated to a random value. For this reason, you cannot set the `data-ad-region` attribute
 on the `<adsbygoogle />` component.
 
-For test mode, the following blog was used as a reference:
-- https://www.thedev.blog/3087/test-adsense-ads-safely-without-violating-adsense-tos/
-
 
 ## License
 
