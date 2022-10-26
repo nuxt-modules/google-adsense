@@ -4,47 +4,35 @@
   "description": "Google Adsense Module for Nuxt.js",
   "license": "MIT",
   "repository": "https://github.com/nuxt-community/adsense-module",
+  "type": "module",
   "exports": {
-    ".": "./dist/index.mjs"
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "scripts": {
-    "build": "unbuild",
-    "lint": "eslint --ext .vue,.ts,.js .",
-    "test": "yarn lint",
-    "release": "standard-version && git push --follow-tags && npm publish"
-  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "pathe": "^0.2.0"
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "nuxt-module-build && standard-version && git push --follow-tags && npm publish",
+    "lint": "eslint --ext .js,.ts,.vue"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config-typescript": "^8.0.0",
-    "codecov": "^3.8.3",
-    "eslint": "^8.5.0",
-    "eslint-plugin-vue": "^8.2.0",
-    "jest": "^27.4.5",
-    "jsdom": "^19.0.0",
-    "nuxt": "^2.15.8",
-    "standard-version": "^9.3.2",
-    "unbuild": "^0.6.7"
-  },
-  "keywords": [
-    "AdSense",
-    "Google",
-    "Nuxt",
-    "NuxtJS",
-    "Nuxt.js",
-    "PWA",
-    "SSR",
-    "Vue",
-    "VueJS",
-    "Vue2",
-    "VueRouter",
-    "vue-router",
-    "Web"
-  ]
+    "@nuxt/kit": "^3.0.0-rc.12",
+    "@nuxt/module-builder": "latest",
+    "@nuxt/schema": "^3.0.0-rc.12",
+    "@nuxtjs/eslint-config-typescript": "^11.0.0",
+    "@types/mri": "^1.1.1",
+    "@types/node": "^18.11.0",
+    "eslint": "^8.26.0",
+    "jiti": "^1.16.0",
+    "standard-version": "^9.5.0"
+  }
 }
