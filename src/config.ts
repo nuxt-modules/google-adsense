@@ -24,6 +24,8 @@ export const DEFAULTS: ModuleOptions = {
   pauseOnLoad: false
 }
 
+export const CONFIG_KEY = 'google-adsense'
+
 // Default client ID for testing
 export const TEST_ID = 'ca-google'
 // Adsense script URL

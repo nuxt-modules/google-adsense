@@ -1,6 +1,6 @@
 import { defineNuxtModule, logger, addComponentsDir, isNuxt2 as _isNuxt2, addPluginTemplate } from '@nuxt/kit'
 import defu from 'defu'
-import { ADSENSE_URL, DEFAULTS, ModuleOptions, TEST_ID } from './config'
+import { ADSENSE_URL, DEFAULTS, ModuleOptions, TEST_ID, CONFIG_KEY } from './config'
 import { resolveRuntimeDir, resolveTemplateDir } from './dirs.js'
 
 export type { ModuleOptions }
@@ -8,7 +8,7 @@ export type { ModuleOptions }
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: '@nuxtjs/google-adsense',
-    configKey: 'google-adsense',
+    configKey: CONFIG_KEY,
     compatibility: {
       nuxt: '^2.16.0 || ^3.0.0-rc.11'
     }
@@ -97,14 +97,14 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Inject options into runtime config
     if (isNuxt2) {
-      nuxt.options.publicRuntimeConfig['google-adsense'] = {
-        ...options,
-        ...(nuxt.options.publicRuntimeConfig['google-adsense'] || {})
-      }
+      nuxt.options.publicRuntimeConfig[CONFIG_KEY] = defu(
+        nuxt.options.publicRuntimeConfig[CONFIG_KEY],
+        options
+      )
     } else {
-      nuxt.options.runtimeConfig.public['google-adsense'] = defu(
-        nuxt.options.runtimeConfig.public['google-adsense'],
-        { options }
+      nuxt.options.runtimeConfig.public[CONFIG_KEY] = defu(
+        nuxt.options.runtimeConfig.public[CONFIG_KEY],
+        options
       )
     }
   }
