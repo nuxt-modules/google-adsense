@@ -1,7 +1,7 @@
 export default {
   buildModules: [
     '@nuxt/typescript-build',
-    ['../../src/index', {
+    ['../../src/module', {
       test: true
     }]
   ]

@@ -13,7 +13,7 @@
       </p>
       <p><strong>The gray area shows the advertisement</strong></p>
     </div>
-    <adsbygoogle />
+    <adsbygoogle style="height: 500px" />
   </div>
 </template>
 

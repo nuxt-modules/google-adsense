@@ -1,7 +1,7 @@
 import { defineNuxtModule, logger, addComponentsDir, isNuxt2 as _isNuxt2, addPluginTemplate } from '@nuxt/kit'
 import defu from 'defu'
 import { ADSENSE_URL, DEFAULTS, ModuleOptions, TEST_ID, CONFIG_KEY } from './config'
-import { resolveRuntimeDir, resolveTemplateDir } from './dirs.js'
+import { resolveRuntimeDir, resolveTemplateDir } from './dirs'
 
 export type { ModuleOptions }
 
@@ -10,7 +10,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@nuxtjs/google-adsense',
     configKey: CONFIG_KEY,
     compatibility: {
-      nuxt: '^2.16.0 || ^3.0.0-rc.11'
+      nuxt: '^2.15.0 || ^3.0.0-rc.11'
     }
   },
   defaults: (nuxt) => ({

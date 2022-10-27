@@ -2,7 +2,7 @@
   <div>
     <div>
       <p>
-        The AdSense module will automatically switch to test mode when runniung Nuxt in dev mode.
+        The AdSense module will automatically switch to test mode when running Nuxt in dev mode.
         But you can keep test mode on in production by setting the configuration option test to true.
         <br>
         Test mode uses a test publisher ID,
@@ -16,7 +16,7 @@
       </NuxtLink>
       <p><strong>The gray area shows the advertisement</strong></p>
     </div>
-    <adsbygoogle />
+    <adsbygoogle style="height: 500px" />
   </div>
 </template>
 
