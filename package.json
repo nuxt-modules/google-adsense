@@ -21,7 +21,8 @@
     "dev": "nuxt dev playground",
     "dev:nuxt2": "cd nuxt2-playground && yarn dev",
     "dev:build": "nuxt build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "test": "yarn vitest run"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.12"
@@ -29,9 +30,11 @@
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.0",
     "@nuxt/schema": "^3.0.0-rc.12",
+    "@nuxt/test-utils": "^3.0.0-rc.12",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "eslint": "^8.26.0",
-    "nuxt": "^3.0.0-rc.12"
+    "nuxt": "^3.0.0-rc.12",
+    "vitest": "^0.24.3"
   },
   "resolutions": {
     "@nuxtjs/google-adsense": "link:./"

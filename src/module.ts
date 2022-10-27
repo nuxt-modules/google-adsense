@@ -30,7 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     const isNuxt2 = _isNuxt2(nuxt)
 
-    const useNuxtMeta = (fn: Function) => fn(isNuxt2 ? nuxt.options.head : nuxt.options.meta)
+    const useNuxtMeta = (fn: Function) => fn(isNuxt2 ? nuxt.options.head : nuxt.options.app.head)
 
     useNuxtMeta((head: any) => {
       head.script = head.script ?? []
