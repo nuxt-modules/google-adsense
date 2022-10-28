@@ -19,12 +19,12 @@ export default defineNuxtModule<ModuleOptions>({
   }),
   setup (options, nuxt) {
     if (options.test) {
-      logger.info('Test mode enabled - Using Test Adsense ID')
+      logger.info('Test mode enabled - Using Test AdSense ID')
       options.id = TEST_ID
     }
 
     if (!options.id || typeof options.id !== 'string') {
-      logger.warn('Invalid Adsense client ID specified')
+      logger.warn('Invalid AdSense client ID specified')
       return
     }
 
@@ -48,7 +48,7 @@ export default defineNuxtModule<ModuleOptions>({
         overlays: {bottom: ${options.overlayBottom}},
         ${options.pageLevelAds ? 'enable_page_level_ads: true' : ''}
       }`
-      // Initialize Adsense with ad client id
+      // Initialize AdSense with ad client id
       if (!options.onPageLoad) {
         head.script.push(
           createScriptMeta(
@@ -65,7 +65,7 @@ export default defineNuxtModule<ModuleOptions>({
         )
       }
 
-      // If in DEV mode, add robots meta first to comply with Adsense policies
+      // If in DEV mode, add robots meta first to comply with AdSense policies
       // To prevent MediaPartners from scraping the site
       if (options.test) {
         head.meta = head.meta ?? []

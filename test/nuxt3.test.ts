@@ -10,7 +10,7 @@ await setup({
 })
 
 describe('Nuxt 3 dev', () => {
-  it('should have adsense request', async () => {
+  it('should have AdSense request', async () => {
     const body = await $fetch('/')
 
     expect(body).toContain('//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?')
