@@ -112,9 +112,8 @@ function createScriptMeta (script: string, isNuxt2: boolean) {
   script = `(window.adsbygoogle = window.adsbygoogle || []); ${script}`
   // wrap script inside a guard check to ensure it executes only once
   script = `if (!window.__abg_called){ ${script} window.__abg_called = true;}`
-  const key = isNuxt2 ? 'innerHTML' : 'children'
   return {
     hid: 'adsbygoogle',
-    [key]: script
+    innerHTML: script
   }
 }
