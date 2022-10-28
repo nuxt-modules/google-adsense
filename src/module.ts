@@ -89,9 +89,6 @@ export default defineNuxtModule<ModuleOptions>({
       // Add component to auto load
       addComponentsDir({
         path: resolveRuntimeDir('components-v3'),
-        isAsync: false,
-        prefix: '',
-        level: 999
       })
     }
 
