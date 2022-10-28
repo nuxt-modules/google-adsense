@@ -24,7 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     if (!options.id || typeof options.id !== 'string') {
-      logger.warn('Invalid adsense client ID specified')
+      logger.warn('Invalid Adsense client ID specified')
       return
     }
 
