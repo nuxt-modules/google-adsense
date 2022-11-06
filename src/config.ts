@@ -13,7 +13,6 @@ export interface ModuleOptions {
 
 export const DEFAULTS: ModuleOptions = {
   tag: 'adsbygoogle',
-  id: null,
   pageLevelAds: false,
   includeQuery: false,
   analyticsUacct: '',

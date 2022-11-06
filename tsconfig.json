@@ -6,6 +6,7 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "declaration": true,
+    "strict": true,
     "types": [
       "node"
     ]
