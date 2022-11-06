@@ -16,13 +16,17 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepack": "nuxt-module-build",
     "dev": "nuxt dev playground",
     "dev:nuxt2": "cd nuxt2-playground && yarn dev",
     "dev:build": "nuxt build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "test": "yarn vitest run"
+    "test": "yarn vitest run",
+    "release": "standard-version"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.12"
@@ -34,6 +38,7 @@
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "eslint": "^8.26.0",
     "nuxt": "^3.0.0-rc.12",
+    "standard-version": "^9.5.0",
     "vitest": "^0.24.3"
   },
   "resolutions": {
