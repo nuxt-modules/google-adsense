@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/nuxt-community/adsense-module/compare/v2.0.0...v2.1.0) (2022-11-06)
+
+
+### Bug Fixes
+
+* explictly import useRuntimeConfig ([#166](https://github.com/nuxt-community/adsense-module/issues/166)) ([5e12ebe](https://github.com/nuxt-community/adsense-module/commit/5e12ebe7b14163c0f794a2086ac372362782ad01))
+
 ## [2.0.0](https://github.com/nuxt-community/adsense-module/compare/v1.4.0...v2.0.0) (2021-12-19)
 
 
