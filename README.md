@@ -60,8 +60,8 @@ added to the `<head>` section of your pages.
 
 | Option | type |  description
 | -------- | ---- | -----------
-| `id` | String | Your Google Adsense Publisher client ID (i.e. `ca-pub-#########`). **Required** when not in test mode.
-| `pageLevelAds` | Boolean | Enable Adsense Page Level Ads. Default is `false`. Refer to the AdSense docs for details.
+| `id` | String | Your Google AdSense Publisher client ID (i.e. `ca-pub-#########`). **Required** when not in test mode.
+| `pageLevelAds` | Boolean | Enable AdSense Page Level Ads. Default is `false`. Refer to the AdSense docs for details.
 | `tag` | String | AdSense component tag name. Defaults to `adsbygoogle`.
 | `includeQuery` | Boolean | When `false`, only `$route.path` is checked for changes. If set to `true` `$route.query` will also be taken into account. The default is `false`.
 | `analyticsUacct` | String | Google Analytics Account ID (if linking analytics with AdSense, i.e. `UA-#######-#`).
@@ -92,25 +92,25 @@ that has a specified (min/max) width and (min/max) height (which can be based on
 or use style or classes on the `<adsbygoogle />` component to restrict the advertisement to a
 specific size (or sizes).
 
-Use the `ad-slot` property to specify your google adsense ad slot value (specified as a string)
+Use the `ad-slot` property to specify your Google AdSense ad slot value (specified as a string)
 
 **Component props:**
 
 | prop | type | description
 | ---- | ---- | -----------
 | `ad-slot` | String | Google Adsense adslot. **This prop is required when not in test mode**. Refer to your AdSense account for ad-slot values.
-| `ad-format` | String | Defaults to `'auto'`. Refer to the adsense docs for other options
+| `ad-format` | String | Defaults to `'auto'`. Refer to the AdSense docs for other options
 | `ad-style` | Object | Styles to apply to the rendered `<ins>` element. Default: `{ display: 'block' }`. Refer to VueJS [style binding docs](https://vuejs.org/v2/guide/class-and-style.html#Object-Syntax-1) for the Object format.
-| `ad-layout` | String | Optional. Refer to the adsense docs
-| `ad-layout-key` | String | Optional. Refer to the adsense docs
-| `page-url` | String | Optional.  Set a reference page URL (of similar content) if the ad is on a page that requires authentication. When set, this prop must be a fully qualified URL (inclcuding protocol and hostname).
+| `ad-layout` | String | Optional. Refer to the AdSense docs
+| `ad-layout-key` | String | Optional. Refer to the AdSense docs
+| `page-url` | String | Optional.  Set a reference page URL (of similar content) if the ad is on a page that requires authentication. When set, this prop must be a fully qualified URL (including protocol and hostname).
 | `include-query` | Boolean | Override global option `includeQuery` on a per ad basis. Ensure all ads on a page have the same setting.
 | `analytics-uacct` | String | Google Analytics Account ID (if linking analytics with AdSense, i.e. `UA-#######-#`). Defaults to the value specified in the plugin option `analyticsUacct`.
 | `analytics-domain-name` | String | Google Analytics Account domain (if linking analytics with AdSense, i.e. `example.com`). Defaults to the value specified in the plugin option `analyticsDomainName`.
 
 
 ## Automatic updating of Ads
-Whenever your route changes, any disaplayed ads will update, just as they would on normal
+Whenever your route changes, any displayed ads will update, just as they would on normal
 page loads.
 
 
@@ -124,12 +124,12 @@ ads apepar. Ads on un-crawlable pages will not be shown.
 
 
 ## Background
-This module uses a technique developed by the Angular team (with help from Google Adsense)
+This module uses a technique developed by the Angular team (with help from Google AdSense)
 to handle updating ads on progressive web applications:
 - https://github.com/leonardteo/google-ads-test-angularjs
 - https://groups.google.com/forum/#!topic/angular/eyVo4XU04uk
 
-Each time a new advertisement is requested, the adsense parameter `data-ad-region` is
+Each time a new advertisement is requested, the AdSense parameter `data-ad-region` is
 updated to a random value. For this reason, you cannot set the `data-ad-region` attribute
 on the `<adsbygoogle />` component.
 

@@ -10,5 +10,8 @@
     "@nuxt/types": "latest",
     "@nuxt/typescript-build": "latest",
     "nuxt": "latest"
+  },
+  "resolutions": {
+    "@nuxtjs/google-adsense": "link:../"
   }
 }
