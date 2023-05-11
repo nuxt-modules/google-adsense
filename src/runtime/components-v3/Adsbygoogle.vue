@@ -63,7 +63,7 @@ export default {
   },
   computed: {
     options () {
-      const options = { ...useRuntimeConfig()['google-adsense'] || {} }
+      const options = { ...useRuntimeConfig().public['google-adsense'] || {} }
       if (options.test) {
         options.id = 'ca-google'
       }
@@ -76,7 +76,7 @@ export default {
   watch: {
     '$route' (to, from) {
       // Update if element is connected to DOM.
-      // Prevent updating not connected alive componentns.
+      // Prevent updating not connected alive components.
       if (this.$el && !this.$el.isConnected) {
         return
       }
