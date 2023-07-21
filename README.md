@@ -118,7 +118,7 @@ page loads.
 - **Caution:** Reloading of ads arbitrarily (with minimal page content changes) may result in
 the suspension of your AdSense account. _Refer to AdSense for full terms of use._
 - Google needs to crawl each page where ads appear. Ensure your site SSR renders any page where
-ads apepar. Ads on un-crawlable pages will not be shown.
+ads appear. Ads on un-crawlable pages will not be shown.
 - When placing ads on pages that require authentication, set `page-url` on the `<adsbygoogle />` component to the URL of a page on your site that is publicly accessible, which would have similar/relevant content.
 
 
