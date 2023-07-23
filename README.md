@@ -1,3 +1,15 @@
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
+[![Nuxt][nuxt-src]][nuxt-href]
+
+---
+
+**Note:** This branch is for **Nuxt 3** compatible module. Checkout [`v0` branch](https://github.com/nuxt/image/tree/v0) for **Nuxt 2** support.
+
+---
+
+
 # Google AdSense
 > Google AdSense integration for Nuxt.js. Advertisements will update whenever the page route changes
 
@@ -73,7 +85,7 @@ added to the `<head>` section of your pages.
 
 ### Test mode
 
-The AdSense module will automatically switch to `test` mode when runniung Nuxt in `dev` mode.
+The AdSense module will automatically switch to `test` mode when running Nuxt in `dev` mode.
 But you can keep test mode on in production by setting the configuration option `test` to `true`.
 
 Test mode uses a test publisher ID, so that you will not be violating AdSense TOS.
@@ -83,13 +95,13 @@ correct dimensions (i.e. will occupy the correct space needed by the rendered ad
 
 ## Usage
 
-Insert the `<adsbygoogle />` component (or custom component name specified in options)
-wherever you would like an advertisment placed.
+Insert the `<Adsbygoogle />` component (or custom component name specified in options)
+wherever you would like an advertisement placed.
 
 The ad defaults to `auto` size format (configurable by setting the prop `ad-format`). This mode
-is responsive by nature. You should place the `<adsbygoogle />` component inside a container element
+is responsive by nature. You should place the `<Adsbygoogle />` component inside a container element
 that has a specified (min/max) width and (min/max) height (which can be based on media queries),
-or use style or classes on the `<adsbygoogle />` component to restrict the advertisement to a
+or use style or classes on the `<Adsbygoogle />` component to restrict the advertisement to a
 specific size (or sizes).
 
 Use the `ad-slot` property to specify your Google AdSense ad slot value (specified as a string)
@@ -118,8 +130,8 @@ page loads.
 - **Caution:** Reloading of ads arbitrarily (with minimal page content changes) may result in
 the suspension of your AdSense account. _Refer to AdSense for full terms of use._
 - Google needs to crawl each page where ads appear. Ensure your site SSR renders any page where
-ads apepar. Ads on un-crawlable pages will not be shown.
-- When placing ads on pages that require authentication, set `page-url` on the `<adsbygoogle />` component to the URL of a page on your site that is publicly accessible, which would have similar/relevant content.
+ads appear. Ads on un-crawlable pages will not be shown.
+- When placing ads on pages that require authentication, set `page-url` on the `<Adsbygoogle />` component to the URL of a page on your site that is publicly accessible, which would have similar/relevant content.
 
 
 ## Background
@@ -130,7 +142,7 @@ to handle updating ads on progressive web applications:
 
 Each time a new advertisement is requested, the AdSense parameter `data-ad-region` is
 updated to a random value. For this reason, you cannot set the `data-ad-region` attribute
-on the `<adsbygoogle />` component.
+on the `<Adsbygoogle />` component.
 
 For test mode, the following blog was used as a reference:
 - https://www.thedev.blog/3087/test-adsense-ads-safely-without-violating-adsense-tos/
@@ -141,3 +153,16 @@ For test mode, the following blog was used as a reference:
 [MIT License](./LICENSE)
 
 Copyright (c) 2017 Troy Morehouse - Nuxt Community
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/google-adsense/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/google-adsense
+
+[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/google-adsense.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/google-adsene
+
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/google-adsense.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/@nuxtjs/google-adsense
+
+[nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
+[nuxt-href]: https://nuxt.com

@@ -1,0 +1,18 @@
+{
+  "cSpell.words": [
+    "adsbygoogle",
+    "ADSENSE",
+    "adtest",
+    "crossorigin",
+    "defu",
+    "noarchive",
+    "nofollow",
+    "pathe",
+    "Uacct"
+  ],
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false,
+}

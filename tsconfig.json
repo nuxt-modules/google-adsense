@@ -1,17 +1,3 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "declaration": true,
-    "strict": true,
-    "types": [
-      "node"
-    ]
-  },
-  "include": [
-    "src"
-  ]
+  "extends": "./playground/.nuxt/tsconfig.json"
 }
