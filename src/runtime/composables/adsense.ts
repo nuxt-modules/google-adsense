@@ -1,15 +1,18 @@
 import { RouteLocationNormalizedLoaded } from 'vue-router'
-import { Ref } from 'vue'
-import { nextTick } from '#imports'
-
+import { Ref, computed, ref } from 'vue'
 
 export interface AdsByGoogleWindow extends Window {
   adsbygoogle: unknown[]
 }
 export declare let window: AdsByGoogleWindow
 
-export function useAdsense() {
 
+export function useAdsense(
+  ad: Ref<HTMLElement | null>,
+  ) {
+  const innerHtml = computed(() => show.value ? '' : ' ')
+  const key = computed(() => Math.random())
+  const show = ref(true)
 
   function hasRouteChanged(
     newRoute: RouteLocationNormalizedLoaded,
@@ -28,18 +31,12 @@ export function useAdsense() {
       || newQueryKeys.some((key) => newRoute.query[key] !== oldRoute.query[key])
   }
 
-  async function updateAd(show: Ref<boolean>) {
+  async function updateAd() {
     if (process.server)
       return
 
-    show.value = false
-    await nextTick()
-    show.value = true
-  }
-
-  function showAd(ad: HTMLElement | null) {
     setTimeout(() => {
-      if (ad?.innerHTML)
+      if (ad.value?.innerHTML)
         return
 
       try {
@@ -50,15 +47,18 @@ export function useAdsense() {
     }, 50)
   }
 
+
   function generateAdRegion() {
     return `page-${Math.random()}`
   }
 
 
   return {
+    generateAdRegion,
     hasRouteChanged,
+    innerHtml,
+    key,
+    show,
     updateAd,
-    showAd,
-    generateAdRegion
   }
 }

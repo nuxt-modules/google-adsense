@@ -1,9 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
-import { onMounted, useRoute, useRuntimeConfig, watchEffect } from '#imports'
-import { useAdsense } from '../utils/adsByGoogle'
-import { CONFIG_KEY } from '../../config'
+import { useRoute, useRuntimeConfig, ref, watch, useAdsense } from '#imports'
+import type {ModuleOptions} from '../../module'
 
 withDefaults(defineProps<{
   adClient?: string
@@ -29,48 +27,33 @@ withDefaults(defineProps<{
   adSlot: null,
   adStyle: () => ({ display: 'block' }),
   adClient: 'ca-google',
-})
-const { generateAdRegion, hasRouteChanged, showAd, updateAd } = useAdsense()
-const config = useRuntimeConfig().public[CONFIG_KEY]
-const options = {
-  ...config,
-  id: config.test ? 'ca-google' : config.id,
-}
+  })
+
+const config = useRuntimeConfig().public.googleAdsense as ModuleOptions
+const options = { ...config }
 
 const ad = ref<HTMLElement | null>(null)
-const show = ref(false)
 const route = useRoute()
 
-const isConnected = computed(() => ad.value?.isConnected || false)
-const innerHtml = computed(() => show.value ? '' : ' ')
-const key = computed(() => Math.random())
+const {
+  generateAdRegion,
+  hasRouteChanged,
+  innerHtml,
+  key,
+  show,
+  updateAd
+} = useAdsense(ad)
 
 // update ad on route change
 watch(route, (newRoute, oldRoute) => {
-  if (!isConnected.value)
-    return
-
   const routeChanged = hasRouteChanged(newRoute, oldRoute)
 
   if (!routeChanged)
     return
 
-  updateAd(show)
+  updateAd()
 }, { immediate: true })
 
-// trigger showAd
-watchEffect(() => {
-  if (!show.value)
-    return
-
-  showAd(ad.value)
-})
-
-// show ad on client and connected
-onMounted(() => {
-  if (process.client && isConnected.value)
-    show.value = true
-})
 </script>
 
 <template>

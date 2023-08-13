@@ -2,8 +2,8 @@
   "name": "@nuxtjs/google-adsense",
   "version": "1.0.0",
   "description": "Google AdSense Module for Nuxt.js",
-  "license": "MIT",
   "repository": "https://github.com/nuxt-community/adsense-module",
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
@@ -17,20 +17,18 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
   "dependencies": {
+    "defu": "^6.1.2",
     "@nuxt/kit": "^3.6.5"
   },
   "devDependencies": {
@@ -39,10 +37,10 @@
     "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "^3.6.5",
     "@nuxt/test-utils": "^3.6.5",
-    "@types/node": "^18.16.19",
+    "@types/node": "^18.17.3",
     "changelogen": "^0.5.4",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "nuxt": "^3.6.5",
-    "vitest": "^0.33.0"
+    "vitest": "^0.34.1"
   }
 }
