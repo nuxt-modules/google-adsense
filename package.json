@@ -28,8 +28,8 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "defu": "^6.1.2",
-    "@nuxt/kit": "^3.6.5"
+    "@nuxt/kit": "^3.6.5",
+    "defu": "^6.1.2"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -38,6 +38,8 @@
     "@nuxt/schema": "^3.6.5",
     "@nuxt/test-utils": "^3.6.5",
     "@types/node": "^18.17.3",
+    "@vueuse/core": "^10.4.1",
+    "@vueuse/nuxt": "^10.4.1",
     "changelogen": "^0.5.4",
     "eslint": "^8.46.0",
     "nuxt": "^3.6.5",

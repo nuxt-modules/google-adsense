@@ -2,17 +2,20 @@ import { defineNuxtModule, createResolver, logger, addComponent, addImports } fr
 import { defu } from 'defu'
 import { initializeAdClient } from './utils'
 
+export type AdFormats = 'auto' | 'fixed' | 'rectangle' | 'horizontal' | 'vertical'
 
 export interface ModuleOptions {
-  tag?: string,
   id?: string,
-  analyticsUacct?: string,
   analyticsDomainName?: string,
-  pageLevelAds?: boolean,
+  analyticsUacct?: string,
+  adFormat?: AdFormats | string,
+  hideUnfilled?: boolean,
   includeQuery?: boolean,
-  overlayBottom?: boolean,
   onPageLoad?: boolean,
+  overlayBottom?: boolean,
+  pageLevelAds?: boolean,
   pauseOnLoad?: boolean,
+  tag?: string,
   test?: boolean
 }
 
@@ -33,24 +36,25 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: (nuxt) => ({
     id: TEST_ID,
-    tag: 'adsbygoogle',
-    pageLevelAds: false,
-    includeQuery: false,
-    analyticsUacct: '',
     analyticsDomainName: '',
-    overlayBottom: false,
-    test: nuxt.options.dev && (process.env.NODE_ENV !== 'production'),
+    analyticsUacct: '',
+    hideUnfilled: false,
+    includeQuery: false,
     onPageLoad: false,
+    overlayBottom: false,
+    pageLevelAds: false,
     pauseOnLoad: false,
+    tag: 'adsbygoogle',
+    test: nuxt.options.dev && (process.env.NODE_ENV !== 'production'),
   }),
   setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
     if (options.test) {
       logger.info('Test mode enabled - Using Test AdSense ID')
-      // options.id = TEST_ID
+      options.id = TEST_ID
     }
-    else if (options.id !== TEST_ID || typeof options.id !== 'string') {
+    else if (!options.id || typeof options.id !== 'string') {
       logger.warn('Invalid AdSense client ID specified')
       return
     }
@@ -85,7 +89,6 @@ export default defineNuxtModule<ModuleOptions>({
       from: resolve('runtime/composables/adsense')
     })
 
-      // Add component to auto load
     addComponent({
       name: 'Adsbygoogle',
       filePath: resolve('runtime/components/Adsbygoogle.vue')
