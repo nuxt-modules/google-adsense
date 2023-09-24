@@ -21,7 +21,7 @@ const hasQueryParams = computed(() => currentRoute.value.includes('?'))
 
 <template>
   <div class="default-layout">
-    <h1>[DEFAULT LAYOUT]</h1>
+    <h3>[DEFAULT LAYOUT]</h3>
     <nav>
       <NuxtLink to="/">
         Home
@@ -48,23 +48,37 @@ const hasQueryParams = computed(() => currentRoute.value.includes('?'))
 </template>
 
 <style>
+body {
+  background-color: #18181B;
+  color: #ffffff;
+}
+
+a {
+  color: #ffffff;
+  padding: 8px;
+  border: 1px solid #ffffff54;
+  border-radius: 5px;
+}
 button {
   margin: auto;
   background: #00DC82;
+  color: #fff;
   padding: 8px;
+  border-radius: 5px;
+  border: transparent;
+  text-decoration: none;
 }
 
 .default-layout {
   display: flex;
   flex-direction: column;
-  gap: 36px;
-  height: 100vh;
+  gap: 24px;
+  min-height: 100vh;
   padding: 24px;
   margin: auto;
 }
 
-.default-layout  h2 {
-  margin-top: auto;
+.default-layout  h2 h3 {
   text-align: center;
 }
 

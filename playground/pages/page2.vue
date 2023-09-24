@@ -21,15 +21,24 @@
         <p><strong>The gray area shows the advertisement</strong></p>
       </div>
     </div>
-
-    <Adsbygoogle :include-query="true" />
+    <Adsbygoogle
+      ad-format="vertical"
+      :include-query="true"
+      :style="{ minWidth: '300px' }"
+    />
   </div>
 </template>
 
 <style scoped>
+.content {
+  flex: 1 1 auto;
+  overflow-x: hidden;
+}
+
 .page-layout {
   display: flex;
-  flex-direction: column;
+  direction: row;
   gap: 36px;
+  overflow: wrap;
 }
 </style>
