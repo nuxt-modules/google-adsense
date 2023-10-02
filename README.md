@@ -36,7 +36,7 @@ Using top level options:
     ['@nuxtjs/google-adsense']
   ],
 
- 'googleAdsense': {
+ googleAdsense: {
     id: 'ca-pub-#########'
   }
 }
