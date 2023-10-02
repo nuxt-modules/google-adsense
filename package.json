@@ -1,5 +1,5 @@
 {
-  "name": "@kylegl/google-adsense",
+  "name": "@nuxtjs/google-adsense",
   "version": "0.0.1",
   "description": "Google AdSense Module for Nuxt.js",
   "repository": "https://github.com/nuxt-modules/google-adsense.git",
