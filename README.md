@@ -5,7 +5,7 @@
 
 ---
 
-**Note:** This branch is for **Nuxt 3** compatible module. Checkout [`v0` branch](https://github.com/nuxt/image/tree/v0) for **Nuxt 2** support.
+**Note:** This branch is for **Nuxt 3** compatible module. Checkout [`legacy-v2` branch](https://github.com/nuxt-modules/google-adsense/tree/legacy-v2) for **Nuxt 2** support.
 
 ---
 
