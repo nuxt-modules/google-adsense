@@ -6,11 +6,17 @@ import type { AdFormats } from '../../module'
 
 const {
   adClient,
+  adFullWidthResponsive = false,
+  adLayout = null,
+  adLayoutKey = null,
+  adSlot = null,
+  adStyle = { display: 'block' },
   analyticsDomainName,
   analyticsUacct,
   hideUnfilled,
   includeQuery,
-} = withDefaults(defineProps<{
+  pageUrl = null,
+} = defineProps<{
   adClient?: string
   adSlot?: string | null
   adFormat?: AdFormats | string
@@ -23,17 +29,7 @@ const {
   analyticsUacct?: string
   analyticsDomainName?: string
   includeQuery?: boolean
-}>(),
-{
-  adFullWidthResponsive: false,
-  adLayout: null,
-  adLayoutKey: null,
-  pageUrl: null,
-  adSlot: null,
-  adStyle: () => ({ display: 'block' }),
-  adClient: undefined,
-  hideUnfilled: undefined,
-  })
+}>()
 
 
 const {
