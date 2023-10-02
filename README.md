@@ -159,7 +159,6 @@ on the `<Adsbygoogle />` component.
 
 [MIT License](./LICENSE)
 
-Copyright (c) 2017 Troy Morehouse - Nuxt Community
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/google-adsense/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
