@@ -1,6 +1,7 @@
-import googleAdsense from '../src/module'
 export default defineNuxtConfig({
-  modules: [
-    googleAdsense
-  ]
+  modules: ['../src/module'],
+  googleAdsense: {
+    id: 'test-me-id'
+  },
+  devtools: { enabled: true }
 })
