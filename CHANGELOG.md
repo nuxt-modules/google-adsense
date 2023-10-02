@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.0.0
+
+[compare changes](https://github.com/nuxt-modules/google-adsense/compare/v2.1.0...v3.0.0)
+
+### 💅 Refactors
+
+- ⚠️  Nuxt 3 only support ([#186](https://github.com/nuxt-modules/google-adsense/pull/186))
+
+### 🏡 Chore
+
+- **readme:** Remove old 3 ads per page warning ([#176](https://github.com/nuxt-modules/google-adsense/pull/176))
+
+#### ⚠️  Breaking Changes
+
+- ⚠️  Nuxt 3 only support ([#186](https://github.com/nuxt-modules/google-adsense/pull/186))
+
+### ❤️  Contributors
+
+- Kylegl 
+- Mirumi <mail@mirumi.tech>
+
 ## [2.1.0](https://github.com/nuxt-community/adsense-module/compare/v2.0.0...v2.1.0) (2022-11-06)
 
 
