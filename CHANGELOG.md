@@ -2,54 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## v0.0.1
-
-[compare changes](https://github.com/kylegl/google-adsense/compare/v1.0.1...v0.0.1)
-
-### 💅 Refactors
-
-- Nuxt 3 component composition api ([70c78f8](https://github.com/kylegl/google-adsense/commit/70c78f8))
-
-### 📖 Documentation
-
-- Update readme ([61e5e4f](https://github.com/kylegl/google-adsense/commit/61e5e4f))
-
-### 🏡 Chore
-
-- Update nuxt module builder packages ([a635a93](https://github.com/kylegl/google-adsense/commit/a635a93))
-
-### 🎨 Styles
-
-- Playground ([460ca89](https://github.com/kylegl/google-adsense/commit/460ca89))
-
-### ❤️  Contributors
-
-- Kyle <lauber.kyle@gmail.com>
-
-## v1.0.0
-
-[compare changes](https://github.com/kylegl/google-adsense/compare/v1.0.1...v1.0.0)
-
-### 💅 Refactors
-
-- Nuxt 3 component composition api ([70c78f8](https://github.com/kylegl/google-adsense/commit/70c78f8))
-
-### 📖 Documentation
-
-- Update readme ([61e5e4f](https://github.com/kylegl/google-adsense/commit/61e5e4f))
-
-### 🏡 Chore
-
-- Update nuxt module builder packages ([a635a93](https://github.com/kylegl/google-adsense/commit/a635a93))
-
-### 🎨 Styles
-
-- Playground ([460ca89](https://github.com/kylegl/google-adsense/commit/460ca89))
-
-### ❤️  Contributors
-
-- Kyle <lauber.kyle@gmail.com>
-
 ## [2.1.0](https://github.com/nuxt-community/adsense-module/compare/v2.0.0...v2.1.0) (2022-11-06)
 
 
