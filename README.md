@@ -56,7 +56,7 @@ Using runtime config:
   },
 
   publicRuntimeConfig: {
-    'googleAdsense': {
+    googleAdsense: {
       id: process.env.GOOGLE_ADSENSE_ID,
       test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
     },
