@@ -50,7 +50,7 @@ Using runtime config:
     ['@nuxtjs/google-adsense']
   ],
 
-  'googleAdsense': {
+  googleAdsense: {
     onPageLoad: false,
     pageLevelAds: false,
   },
