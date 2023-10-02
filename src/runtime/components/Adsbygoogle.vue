@@ -2,7 +2,7 @@
 <!-- eslint-disable  vue/require-default-prop -->
 <script setup lang="ts">
 import { useAdsense } from '#imports'
-import type { AdFormats } from 'src/module'
+import type { AdFormats } from '../../module'
 
 const {
   adClient,
