@@ -58,7 +58,7 @@ export function useAdsense(input: UseAdsenseOptions) {
 
 
   async function updateAd() {
-    if (process.server)
+    if (import.meta.server)
       return
 
     // reset ad element
