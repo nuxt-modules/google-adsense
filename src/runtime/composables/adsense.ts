@@ -1,10 +1,10 @@
-import { useRoute, useRuntimeConfig } from '#imports'
-import { computed, ref, nextTick, onMounted, watch, watchEffect} from 'vue'
-import { RouteLocationNormalizedLoaded } from 'vue-router'
+import { computed, ref, nextTick, onMounted, watch, watchEffect } from 'vue'
+import type { RouteLocationNormalizedLoaded } from 'vue-router'
 import { useCurrentElement } from '@vueuse/core'
 import { defu } from 'defu'
 
 import type { ComputedRef } from 'vue'
+import { useRoute, useRuntimeConfig } from '#imports'
 
 /// TYPES
 export interface AdsByGoogleWindow extends Window {
@@ -14,7 +14,7 @@ export declare let window: AdsByGoogleWindow
 
 type RoutePathAndQuery = [
   RouteLocationNormalizedLoaded['path'],
-  RouteLocationNormalizedLoaded['query']
+  RouteLocationNormalizedLoaded['query'],
 ]
 
 export type UseAdsenseOptions = {
@@ -30,7 +30,7 @@ export function useAdsense(input: UseAdsenseOptions) {
   const config = useRuntimeConfig().public.googleAdsense
 
   // override module config with component props
-  const options =  defu(input, config)
+  const options = defu(input, config)
 
   const adClient = options.adClient ?? options.id
   const adTest = options.test ? 'on' : null
@@ -56,9 +56,8 @@ export function useAdsense(input: UseAdsenseOptions) {
   const queryParams = useRouteAttr('query')
   const status = computed(() => show.value ? null : '')
 
-
   async function updateAd() {
-    if (process.server)
+    if (import.meta.server)
       return
 
     // reset ad element
@@ -79,7 +78,8 @@ export function useAdsense(input: UseAdsenseOptions) {
 
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({})
-    } catch (error) {
+    }
+    catch (error) {
       console.error(error)
     }
   }
@@ -139,7 +139,6 @@ export function useAdsense(input: UseAdsenseOptions) {
   }
 }
 
-
 /// UTILS
 
 // Returns route path and query params as computed ref
@@ -153,7 +152,7 @@ function useRouteAttr<
 function hasRouteChanged(
   newRoute: RoutePathAndQuery,
   oldRoute: RoutePathAndQuery,
-  includeQuery?: boolean
+  includeQuery?: boolean,
 ) {
   const [newPath, newQuery] = newRoute
   const [oldPath, oldQuery] = oldRoute
@@ -170,5 +169,5 @@ function hasRouteChanged(
   const oldQueryKeys = Object.keys(oldQuery)
 
   return newQueryKeys.length !== oldQueryKeys.length
-    || newQueryKeys.some((key) => newQuery[key] !== oldQuery[key])
+    || newQueryKeys.some(key => newQuery[key] !== oldQuery[key])
 }

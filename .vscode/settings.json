@@ -1,20 +1,3 @@
 {
-  "cSpell.words": [
-    "adsbygoogle",
-    "ADSENSE",
-    "adtest",
-    "crossorigin",
-    "defu",
-    "googlesyndication",
-    "noarchive",
-    "nofollow",
-    "pagead",
-    "pathe",
-    "Uacct"
-  ],
-  "prettier.enable": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "editor.formatOnSave": false,
+  "eslint.experimental.useFlatConfig": true
 }
