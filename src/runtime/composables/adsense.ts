@@ -10,6 +10,7 @@ import { useRoute, useRuntimeConfig } from '#imports'
 export interface AdsByGoogleWindow extends Window {
   adsbygoogle: unknown[]
 }
+// eslint-disable-next-line import/no-mutable-exports
 export declare let window: AdsByGoogleWindow
 
 type RoutePathAndQuery = [
