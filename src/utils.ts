@@ -1,5 +1,4 @@
-import type { ModuleOptions } from "src/module"
-
+import type { ModuleOptions } from 'src/module'
 
 export function initializeAdClient(options: ModuleOptions) {
   const adsenseScript = `{
@@ -29,6 +28,6 @@ function createScriptMeta(script: string) {
   script = `if (!window.__abg_called){ ${script} window.__abg_called = true;}`
   return {
     hid: 'adsbygoogle',
-    innerHTML: script
+    innerHTML: script,
   }
 }

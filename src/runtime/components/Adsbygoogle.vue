@@ -1,8 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <!-- eslint-disable  vue/require-default-prop -->
 <script setup lang="ts">
-import { useAdsense } from '#imports'
 import type { AdFormats } from '../../module'
+import { useAdsense } from '#imports'
 
 const {
   adClient,
@@ -33,8 +33,7 @@ const {
   adStyle: () => ({ display: 'block' }),
   adClient: undefined,
   hideUnfilled: undefined,
-  })
-
+})
 
 const {
   adClass,

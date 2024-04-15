@@ -5,17 +5,17 @@ import { initializeAdClient } from './utils'
 export type AdFormats = 'auto' | 'fixed' | 'rectangle' | 'horizontal' | 'vertical'
 
 export interface ModuleOptions {
-  id?: string,
-  analyticsDomainName?: string,
-  analyticsUacct?: string,
-  adFormat?: AdFormats | string,
-  hideUnfilled?: boolean,
-  includeQuery?: boolean,
-  onPageLoad?: boolean,
-  overlayBottom?: boolean,
-  pageLevelAds?: boolean,
-  pauseOnLoad?: boolean,
-  tag?: string,
+  id?: string
+  analyticsDomainName?: string
+  analyticsUacct?: string
+  adFormat?: AdFormats | string
+  hideUnfilled?: boolean
+  includeQuery?: boolean
+  onPageLoad?: boolean
+  overlayBottom?: boolean
+  pageLevelAds?: boolean
+  pauseOnLoad?: boolean
+  tag?: string
   test?: boolean
 }
 
@@ -24,17 +24,15 @@ const ADSENSE_URL = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
 // Default client ID for testing
 const TEST_ID = 'ca-google'
 
-
-
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: '@nuxtjs/google-adsense',
     configKey: 'googleAdsense',
     compatibility: {
-      nuxt: '^3.X.X'
-    }
+      nuxt: '^3.X.X',
+    },
   },
-  defaults: (nuxt) => ({
+  defaults: nuxt => ({
     id: TEST_ID,
     analyticsDomainName: '',
     analyticsUacct: '',
@@ -66,7 +64,7 @@ export default defineNuxtModule<ModuleOptions>({
       hid: 'adsbygoogle-script',
       defer: true,
       crossorigin: 'anonymous',
-      src: `${ADSENSE_URL}?client=${options.id}`
+      src: `${ADSENSE_URL}?client=${options.id}`,
     })
 
     // Initialize AdSense with ad client id
@@ -79,24 +77,24 @@ export default defineNuxtModule<ModuleOptions>({
       head.meta = head.meta ?? []
       head.meta.unshift({
         name: 'robots',
-        content: 'noindex,noarchive,nofollow'
+        content: 'noindex,noarchive,nofollow',
       })
     }
 
     addImports({
       name: 'useAdsense',
       as: 'useAdsense',
-      from: resolve('runtime/composables/adsense')
+      from: resolve('runtime/composables/adsense'),
     })
 
     addComponent({
       name: 'Adsbygoogle',
-      filePath: resolve('runtime/components/Adsbygoogle.vue')
+      filePath: resolve('runtime/components/Adsbygoogle.vue'),
     })
 
     nuxt.options.runtimeConfig.public.googleAdsense = defu(
       nuxt.options.runtimeConfig.public.googleAdsense,
-      options
+      options,
     )
-  }
+  },
 })

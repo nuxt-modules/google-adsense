@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { computed, navigateTo, useRoute } from '#imports'
+
 const route = useRoute()
 
 function changeQueryParams() {
   if (hasQueryParams.value)
     navigateTo({
       path: currentRoute.value,
-      query: {}
+      query: {},
     })
   else
     navigateTo({
       path: currentRoute.value,
-      query: { test: 'true' }
+      query: { test: 'true' },
     })
 }
 
@@ -35,13 +36,12 @@ const hasQueryParams = computed(() => currentRoute.value.includes('?'))
     <Adsbygoogle
       ad-format="horizontal"
       data-ad-full-width-responsive="true"
-      :ad-style="{ display: 'inline-block', height: '90px', maxWidth: '1000px'}"
+      :ad-style="{ display: 'inline-block', height: '90px', maxWidth: '1000px' }"
     />
 
     <button @click="changeQueryParams()">
       Change Query Params
     </button>
-
 
     <NuxtPage />
   </div>

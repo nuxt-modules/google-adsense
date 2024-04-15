@@ -3,7 +3,7 @@
     <Adsbygoogle
       ad-format="vertical"
       :include-query="true"
-      :style="{minWidth: '300px'}"
+      :style="{ minWidth: '300px' }"
     />
 
     <div class="content">
