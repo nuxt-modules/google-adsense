@@ -20,7 +20,7 @@ export interface ModuleOptions {
 }
 
 // AdSense script URL
-const ADSENSE_URL = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+const ADSENSE_URL = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
 // Default client ID for testing
 const TEST_ID = 'ca-google'
 
