@@ -29,7 +29,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@nuxtjs/google-adsense',
     configKey: 'googleAdsense',
     compatibility: {
-      nuxt: '^3.X.X',
+      nuxt: '>=3.X.X',
     },
   },
   defaults: nuxt => ({
