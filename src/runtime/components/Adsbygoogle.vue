@@ -5,12 +5,19 @@ import type { AdFormats } from '../../module'
 import { useAdsense } from '#imports'
 
 const {
-  adClient,
-  analyticsDomainName,
+  adClient = undefined,
+  adSlot = null,
+  adFormat,
+  adLayout = null,
+  adLayoutKey = null,
+  adStyle = { display: 'block' },
+  adFullWidthResponsive = false,
+  hideUnfilled = undefined,
+  pageUrl = null,
   analyticsUacct,
-  hideUnfilled,
+  analyticsDomainName,
   includeQuery,
-} = withDefaults(defineProps<{
+} = defineProps<{
   adClient?: string
   adSlot?: string | null
   adFormat?: AdFormats | string
@@ -23,17 +30,7 @@ const {
   analyticsUacct?: string
   analyticsDomainName?: string
   includeQuery?: boolean
-}>(),
-{
-  adFullWidthResponsive: false,
-  adLayout: null,
-  adLayoutKey: null,
-  pageUrl: null,
-  adSlot: null,
-  adStyle: () => ({ display: 'block' }),
-  adClient: undefined,
-  hideUnfilled: undefined,
-})
+}>()
 
 const {
   adClass,
