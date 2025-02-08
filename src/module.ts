@@ -95,7 +95,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     nuxt.options.runtimeConfig.public.googleAdsense = defu(
-      nuxt.options.runtimeConfig.public.googleAdsense,
+      nuxt.options.runtimeConfig.public.googleAdsense ?? {},
       options,
     )
   },
