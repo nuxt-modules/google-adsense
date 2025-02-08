@@ -21,7 +21,7 @@ const {
   adClient?: string
   adSlot?: string | null
   adFormat?: AdFormats | string
-  adLayout?: string | null
+  adLayout?: AdLayouts | string
   adLayoutKey?: string | null
   adStyle?: Record<string, string>
   adFullWidthResponsive?: boolean
