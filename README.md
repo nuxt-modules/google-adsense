@@ -76,7 +76,7 @@ added to the `<head>` section of your pages.
 | `adFormat` | String | Sets a global default ad format. Can be overridden with component props.
 | `analyticsDomainName` | String | Google Analytics Account Domain (if linking analytics with AdSense, i.e. `example.com`).
 | `analyticsUacct` | String | Google Analytics Account ID (if linking analytics with AdSense, i.e. `UA-#######-#`).
-| `hideFilled` | Boolean | When `false`, unfilled ads will not be hidden, when `true` unfilled ads will be hidden. The default is `false`. 
+| `hideUnfilled` | Boolean | When `false`, unfilled ads will not be hidden, when `true` unfilled ads will be hidden. The default is `false`. 
 | `includeQuery` | Boolean | When `false`, only `$route.path` is checked for changes. If set to `true` `$route.query` will also be taken into account. The default is `false`.
 | `onPageLoad` | Boolean | Loads Adsense script after page load. Default is `false`.
 | `overlayBottom` | Boolean | Enable Adsense Anchor Ads to show at bottom. Default is `false`. Refer to the AdSense docs for details.
