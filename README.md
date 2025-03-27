@@ -125,8 +125,9 @@ Please refer to the adsense documentation for more info.
 | `analytics-domain-name` | String | Google Analytics Account domain (if linking analytics with AdSense, i.e. `example.com`). Defaults to the value specified in the plugin option `analyticsDomainName`.
 
 **Component exposed internal data**
+
 | name | type | description
-| ____ | ____ | ___________
+| ---- | ---- | -----------
 |`showAd` | method | Trigger the show ad method to show the ad.
 | `updateAd` | method | Trigger the update ad method to refresh the ad.
 | `isUnfilled` | computed ref | Tracks unfilled attribute on ad element. Returns `true` if `data-ad-state` = 'unfilled'.
