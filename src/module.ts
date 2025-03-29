@@ -2,13 +2,15 @@ import { defineNuxtModule, createResolver, logger, addComponent, addImports } fr
 import { defu } from 'defu'
 import { initializeAdClient } from './utils'
 
-export type AdFormats = 'auto' | 'fixed' | 'rectangle' | 'horizontal' | 'vertical'
+export type AdFormats = 'auto' | 'rectangle' | 'horizontal' | 'vertical' | 'fluid' | 'autorelaxed'
+export type AdLayouts = 'in-article' | 'in-feed' | 'fixed'
 
 export interface ModuleOptions {
   id?: string
   analyticsDomainName?: string
   analyticsUacct?: string
   adFormat?: AdFormats | string
+  adLayout?: AdLayouts | string
   hideUnfilled?: boolean
   includeQuery?: boolean
   onPageLoad?: boolean
@@ -93,7 +95,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     nuxt.options.runtimeConfig.public.googleAdsense = defu(
-      nuxt.options.runtimeConfig.public.googleAdsense,
+      nuxt.options.runtimeConfig.public.googleAdsense ?? {},
       options,
     )
   },
