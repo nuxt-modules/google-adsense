@@ -78,7 +78,12 @@ export function useAdsense(input: UseAdsenseOptions) {
       return
 
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
+      window.adsbygoogle = window.adsbygoogle || [];
+      
+      if (window.adsbygoogle.hasOwnProperty("loaded") && 
+        (window.adsbygoogle as any).loaded === false) {
+        window.adsbygoogle.push({});
+      }
     }
     catch (error) {
       console.error(error)
