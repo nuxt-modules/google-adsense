@@ -16,7 +16,7 @@ export function initializeAdClient(options: ModuleOptions) {
   return createScriptMeta(
     `adsbygoogle.onload = function() {
       adsbygoogle.pauseAdRequests=${options.pauseOnLoad ? '1' : '0'};
-      [].forEach.call(document.getElementsByClassName('adsbygoogle'), function() { adsbygoogle.push(${adsenseScript}); })
+      [].forEach.call(document.querySelectorAll("ins.adsbygoogle[data-ad-client='${options.id}']"), function() { adsbygoogle.push(${adsenseScript}); })
     };`)
 }
 
