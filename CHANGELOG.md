@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.0.2
+
+[compare changes](https://github.com/nuxt-modules/google-adsense/compare/v3.0.1...v3.0.2)
+
+### 🏡 Chore
+
+- Lint + fix ([589094b](https://github.com/nuxt-modules/google-adsense/commit/589094b))
+- Changelog gen and version bump handling ([f915439](https://github.com/nuxt-modules/google-adsense/commit/f915439))
+
+### 🤖 CI
+
+- Better ci & trusted publishing ([84ea566](https://github.com/nuxt-modules/google-adsense/commit/84ea566))
+
+### ❤️ Contributors
+
+- Alexander Lichter ([@TheAlexLichter](http://github.com/TheAlexLichter))
+
 ## v3.0.1
 
 [compare changes](https://github.com/nuxt-modules/google-adsense/compare/v3.0.0...v3.0.1)
