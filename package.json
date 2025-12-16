@@ -2,7 +2,10 @@
   "name": "@nuxtjs/google-adsense",
   "version": "3.0.1",
   "description": "Google AdSense Module for Nuxt.js",
-  "repository": "https://github.com/nuxt-modules/google-adsense.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxt-modules/google-adsense.git"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {
