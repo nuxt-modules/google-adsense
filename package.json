@@ -41,6 +41,7 @@
     "@nuxt/test-utils": "^3.21.0",
     "@types/node": "^25.0.2",
     "changelogen": "^0.6.2",
+    "changelogithub": "^14.0.0",
     "eslint": "^9.39.2",
     "nuxt": "^4.2.2",
     "vitest": "^4.0.16",
