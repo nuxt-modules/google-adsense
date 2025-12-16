@@ -29,7 +29,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@nuxtjs/google-adsense',
     configKey: 'googleAdsense',
     compatibility: {
-      nuxt: '^3.X.X',
+      nuxt: '>=3.0.0',
     },
   },
   defaults: nuxt => ({
@@ -61,7 +61,7 @@ export default defineNuxtModule<ModuleOptions>({
     head.script = head.script ?? []
 
     head.script.push({
-      hid: 'adsbygoogle-script',
+      key: 'adsbygoogle-script',
       defer: true,
       crossorigin: 'anonymous',
       src: `${ADSENSE_URL}?client=${options.id}`,
