@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.0.1
+
+[compare changes](https://github.com/nuxt-modules/google-adsense/compare/v3.0.0...v3.0.1)
+
+### 🩹 Fixes
+
+- Opt in to `import.meta.*` properties ([#193](https://github.com/nuxt-modules/google-adsense/pull/193))
+
+### 🏡 Chore
+
+- Update release command ([a5b269f](https://github.com/nuxt-modules/google-adsense/commit/a5b269f))
+- Run tests on node 18 ([e6790c5](https://github.com/nuxt-modules/google-adsense/commit/e6790c5))
+- Migrate to eslint v9 ([#195](https://github.com/nuxt-modules/google-adsense/pull/195))
+- Fix table syntax in readme ([#206](https://github.com/nuxt-modules/google-adsense/pull/206))
+- Bump compat ([82649e3](https://github.com/nuxt-modules/google-adsense/commit/82649e3))
+
+### 🤖 CI
+
+- Add codecov token ([#196](https://github.com/nuxt-modules/google-adsense/pull/196))
+
+### ❤️ Contributors
+
+- Alexander Lichter ([@TheAlexLichter](https://github.com/TheAlexLichter))
+- Daniel VALAT-VOLFART ([@DanielVALAT](https://github.com/DanielVALAT))
+- Daniel Roe ([@danielroe](https://github.com/danielroe))
+- Alexander ([@TheAlexLichter](https://github.com/TheAlexLichter))
+
 ## v3.0.0
 
 [compare changes](https://github.com/nuxt-modules/google-adsense/compare/v2.1.0...v3.0.0)
