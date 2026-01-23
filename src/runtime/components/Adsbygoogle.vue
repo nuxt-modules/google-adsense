@@ -84,6 +84,6 @@ defineExpose({ isUnfilled, updateAd, showAd })
 
 <style scoped>
 .hide-filled {
-  display: none important!;
+  display: none !important;
 }
 </style>
